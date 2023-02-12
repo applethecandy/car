@@ -12,7 +12,7 @@ class Index extends Component
     public function render()
     {
         if (Auth::check()) {
-            $user = Auth::user()->with('cars')->first();
+            $user = Auth::user();
 
             return view('livewire.index', compact('user'));
         } else {
