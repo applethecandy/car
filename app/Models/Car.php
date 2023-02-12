@@ -9,6 +9,8 @@ class Car extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['mileage'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    protected $listeners = ['refresh' => '$refresh'];
+
     public function render()
     {
-
-
         if (Auth::check()) {
             $user = Auth::user()->with('cars')->first();
 

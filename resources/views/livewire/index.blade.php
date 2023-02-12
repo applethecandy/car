@@ -41,9 +41,7 @@
                             <div class="buttons">
                                 <a href="{{ route('car', ['id' => $car->id]) }}"
                                     class="button button-primary">{{ __('Choose') }}</a>
-                                <a class="button button-secondary">{{ __('Change mileage') }}</a>
-                                <button class="button button-secondary"
-                                    onclick="Livewire.emit('openModal', 'change-mileage')">Edit User</button>
+                                <a class="button button-secondary" wire:click="$emit('openModal', 'change-mileage', {{ json_encode(['car' => $car->id]) }})">{{ __('Change mileage') }}</a>
                                 <a class="button button-secondary">{{ __('Edit') }}</a>
                             </div>
                         </div>
