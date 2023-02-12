@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Livewire\Test2;
-use App\Http\Livewire\Test;
+use App\Http\Livewire\Index;
 use App\Models\Car;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', HomeController::class)->name('index');
+Route::get('/', Index::class)->name('index');
 
 Route::get('car/{id}', function ($car) {
     $car = Car::whereId($car)->with('tasks')->first();
