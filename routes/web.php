@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Livewire\Index;
+use App\Http\Livewire\Tasks;
 use App\Models\Car;
 use Illuminate\Support\Facades\Route;
 
@@ -16,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', Index::class)->name('index');
+Route::get('car/{car}/tasks', Tasks::class)->name('tasks');
 
-Route::get('car/{id}', function ($car) {
-    $car = Car::whereId($car)->with('tasks')->first();
+// Route::get('car/{id}', function ($car) {
+//     $car = Car::whereId($car)->with('tasks')->first();
 
-    return view('car', compact('car'));
-})->name('car');
+//     return view('car', compact('car'));
+// })->name('car');
 
 Route::get('car/costs', function () {
     return view('costs');

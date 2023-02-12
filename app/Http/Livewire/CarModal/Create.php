@@ -29,6 +29,6 @@ class Create extends ModalComponent
             'image_path' => 'https://api.cloudhostica.com/dummyImage/128/jpg/7bf/fff/' . preg_replace('/((\b\w|[0-9])|.)/u', '$2', $name),
         ]);
         $this->closeModal();
-        $this->emitTo('index', 'refresh');
+        $this->emit('refresh');
     }
 }

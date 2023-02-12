@@ -25,6 +25,9 @@ class Delete extends ModalComponent
     {
         $this->car->delete();
         $this->forceClose()->closeModal();
-        $this->emitTo('index', 'refresh');
+        $this->emit('refresh');
+        if (str_replace(url('/'), '', url()->previous()) != '/') {
+            return redirect()->route('index');
+        }
     }
 }

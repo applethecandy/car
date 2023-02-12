@@ -27,6 +27,6 @@ class ChangeMileage extends ModalComponent
     {
         $this->car->update(['mileage' => $mileage]);
         $this->closeModal();
-        $this->emitTo('index', 'refresh');
+        $this->emit('refresh');
     }
 }

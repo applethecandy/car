@@ -7,10 +7,17 @@ use Livewire\Component;
 
 class Tasks extends Component
 {
-    public $car_id;
+    public $car;
+
+    protected $listeners = ['refresh' => '$refresh'];
+    
+    public function mount(Car $car)
+    {
+        $this->car = $car;
+    }
 
     public function render()
     {
-        return view('livewire.tasks', ['car' => Car::whereId($this->car_id)->with('tasks')->first()]);
+        return view('livewire.tasks');
     }
 }

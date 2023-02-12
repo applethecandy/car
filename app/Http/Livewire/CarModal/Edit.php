@@ -10,6 +10,7 @@ class Edit extends ModalComponent
     public $car;
     public $name;
     public $mileage;
+    public $return;
 
     protected $listeners = ['editCar' => 'update'];
     
@@ -30,6 +31,6 @@ class Edit extends ModalComponent
         extract($params);
         $this->car->update(['mileage' => $mileage, 'name' => $name]);
         $this->closeModal();
-        $this->emitTo('index', 'refresh');
+        $this->emit('refresh');
     }
 }

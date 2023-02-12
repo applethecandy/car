@@ -39,7 +39,7 @@
                                 <p>{{ __('Closest tasks') }}: {{ 5 . ' ' . trans_choice('task|tasks', 5) }} </p>
                             </div>
                             <div class="buttons">
-                                <a href="{{ route('car', ['id' => $car->id]) }}"
+                                <a href="{{ route('tasks', ['car' => $car->id]) }}"
                                     class="button button-primary">{{ __('Choose') }}</a>
                                 <a class="button button-secondary" wire:click="$emit('openModal', 'change-mileage', {{ json_encode(['car' => $car->id]) }})">{{ __('Change mileage') }}</a>
                                 <a class="button button-secondary" wire:click="$emit('openModal', 'car-modal.edit', {{ json_encode(['car' => $car->id]) }})">{{ __('Edit') }}</a>

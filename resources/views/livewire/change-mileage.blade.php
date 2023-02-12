@@ -1,6 +1,6 @@
 <div>
     <div class="modal-header">
-        Добавить новую машину
+        Изменить пробег
     </div>
     <div class="modal-content">
         <div class="form">
