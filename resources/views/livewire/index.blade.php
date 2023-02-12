@@ -42,7 +42,7 @@
                                 <a href="{{ route('car', ['id' => $car->id]) }}"
                                     class="button button-primary">{{ __('Choose') }}</a>
                                 <a class="button button-secondary" wire:click="$emit('openModal', 'change-mileage', {{ json_encode(['car' => $car->id]) }})">{{ __('Change mileage') }}</a>
-                                <a class="button button-secondary">{{ __('Edit') }}</a>
+                                <a class="button button-secondary" wire:click="$emit('openModal', 'car-modal.edit', {{ json_encode(['car' => $car->id]) }})">{{ __('Edit') }}</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
             <div class="block-extra block-clickable">
                 <div class="block">
                     <div class="block-content">
-                        <p style="text-align: center">{{ __('Add new car') }}</p>
+                        <p style="text-align: center" wire:click="$emit('openModal', 'car-modal.create')">{{ __('Add new car') }}</p>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ class Car extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['mileage'];
+    protected $fillable = ['mileage', 'name', 'user_id', 'image_path'];
 
     public function user()
     {

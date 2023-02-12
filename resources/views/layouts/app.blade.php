@@ -15,6 +15,57 @@
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <style>
+        .modal {
+            padding: 1rem;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-item input {
+            border: none;
+            border: 2px solid rgb(0 0 0 / 15%);
+            padding: 12px 10px;
+            font-size: 16px;
+            resize: none;
+            margin-top: 7px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            color: #243342;
+            outline-color: #243342;
+            outline-width: thin;
+            -webkit-appearance: none;
+        }
+
+        .form-item input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: 2px solid rgb(0 0 0 / 15%);
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .modal-header {
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgb(0 0 0 / 10%);
+            font-weight: bold;
+            font-size: 14pt;
+        }
+
+        .modal-footer {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgb(0 0 0 / 10%);
+        }
+
         .livewire-ui-modal {
             overflow-y: auto;
             position: fixed;
@@ -34,6 +85,10 @@
             min-height: 100vh;
         }
 
+        .overflow-y-hidden {
+            overflow-y: hidden;
+        }
+
         .modal {
             /* md:max-w-xl lg:max-w-2xl */
             margin-top: 2rem;
@@ -41,6 +96,8 @@
             vertical-align: middle;
             width: 100%;
             max-width: 28rem;
+            
+            transform: translate(0px, 0px);
 
 
             display: inline-block;
@@ -58,7 +115,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            z-index: -1;
+            /* z-index: -1; */
         }
 
         .modal-background {
@@ -181,6 +238,7 @@
             font-size: 1em;
             padding: 6px 12px;
             border-radius: 10px;
+            border: none;
             transition: ease-in-out .1s;
             text-decoration: none;
             cursor: pointer;
