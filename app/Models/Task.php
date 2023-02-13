@@ -10,6 +10,18 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'car_id',
+        'name',
+        'description',
+        'mileage',
+        'to_mileage',
+        'every_mileage',
+        'date',
+        'to_date',
+        'every_date',
+    ];
+
     protected $casts = [
         'date' => 'date',
     ];

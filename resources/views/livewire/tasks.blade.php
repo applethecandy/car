@@ -1,3 +1,4 @@
+
 <div class="page">
     <div class="block-extra">
         <div class="block">
@@ -31,7 +32,7 @@
         <div class="block-extra block-clickable">
             <div class="block">
                 <div class="block-content">
-                    <p style="text-align: center">{{ __('Add new task') }}</p>
+                    <p style="text-align: center" wire:click="$emit('openModal', 'task-modal.create', {{ json_encode(['car' => $car->id]) }})">{{ __('Add new task') }}</p>
                 </div>
             </div>
         </div>
@@ -53,14 +54,14 @@
                                     @else
                                         {{ trans_choice('It should have been done :count :unit ago', abs($task->offset), ['unit' => __('km')]) }}
                                     @endif
-                                    ({{ trans_choice('on :count :unit', $task->$type, ['unit' => __('km')]) }})
+                                    ({{ trans_choice(($type == 'to_mileage' ? 'on' : 'every') . ' :count :unit', $task->$type, ['unit' => __('km')]) }})
                                 @else
                                     @if ($task->isToday())
                                         {{ __('Today') }}
                                     @else
                                         @if (!$task->isOverdue())
                                             {{ trans_choice('After :count :unit', abs($task->offset), ['unit' => trans_choice('day|days', abs($task->offset))]) }}
-                                            ({{ $task->date->addDays($task->to_date)->format('d.m.Y') }})
+                                            ({{ $task->date->addDays($task->to_date + $task->every_date)->format('d.m.Y') }})
                                         @else
                                             {{ trans_choice('It should have been done :count :unit ago', abs($task->offset), ['unit' => trans_choice('day|days', abs($task->offset))]) }}
                                             ({{ trans_choice('every :count :unit', $task->every_date, ['unit' => trans_choice('day|days', $task->every_date)]) }})

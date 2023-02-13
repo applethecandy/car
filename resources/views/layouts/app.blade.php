@@ -25,7 +25,11 @@
             gap: 10px;
         }
 
-        .form-item input {
+        .input-radio > input {
+            margin-right: 5px;
+        }
+
+        .form-item input:not([type="radio"]), .form-item textarea {
             border: none;
             border: 2px solid rgb(0 0 0 / 15%);
             padding: 12px 10px;
