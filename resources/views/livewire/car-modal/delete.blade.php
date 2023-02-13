@@ -1,9 +1,9 @@
 <div>
     <div class="modal-header">
-        Удалить автомобиль
+        {{ __('Delete car') }}
     </div>
     <div class="modal-content">
-        Вы уверены, что хотите удалить автомобиль {{ $car->name }}?
+        {{ trans_choice('Are you sure you want to delete :car?', 0, ['car' => $car->name]) }}
     </div>
     <div class="modal-footer">
         <div class="buttons">

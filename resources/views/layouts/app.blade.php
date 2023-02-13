@@ -15,6 +15,19 @@
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <style>
+        .mark.red {
+            color: red;
+        }
+        .mark.green {
+            color: green;
+        }
+        .mark.yellow {
+            color: yellow;
+        }
+        .mark.blue {
+            color: blue;
+        }
+
         .modal {
             padding: 1rem;
         }

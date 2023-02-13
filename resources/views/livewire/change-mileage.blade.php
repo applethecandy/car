@@ -1,14 +1,14 @@
 <div>
     <div class="modal-header">
-        Изменить пробег
+        {{ __('Change mileage') }}
     </div>
     <div class="modal-content">
         <div class="form">
             <div class="form-item">
-                Нынешний пробег: {{ $car->mileage }}
+                {{ __('Current mileage') }}: {{ $car->mileage }}
             </div>
             <div class="form-item">
-                <label to="mileage">Новый пробег</label>
+                <label to="mileage">{{ __('New mileage') }}</label>
                 <input type="number" id="mileage" wire:model="mileage" placeholder="126048">
             </div>
         </div>

@@ -36,7 +36,12 @@
                             <h2>{{ $car->name }}</h2>
                             <div class="information">
                                 <p>{{ __('Mileage') }}: {{ $car->mileage }}</p>
-                                <p>{{ __('Closest tasks') }}: {{ 5 . ' ' . trans_choice('task|tasks', 5) }} </p>
+                                @if ($car->closest_tasks->count() > 0)
+                                    <p>{{ __('Closest tasks') }}: {{ trans_choice(':count task|tasks', $car->closest_tasks->count()) }}</p>
+                                @endif
+                                @if ($car->overdue_tasks->count() > 0)
+                                    <p class="mark red">{{ __('Overdue tasks') }}: {{ trans_choice(':count task|tasks', $car->overdue_tasks->count()) }}</p>
+                                @endif
                             </div>
                             <div class="buttons">
                                 <a href="{{ route('tasks', ['car' => $car->id]) }}"

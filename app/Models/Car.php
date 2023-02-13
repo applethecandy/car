@@ -25,4 +25,12 @@ class Car extends Model
     {
         return $this->hasMany(Cost::class);
     }
+
+    public function getClosestTasksAttribute() {
+        return $this->tasks->where('sort_offset', '<', '500')->where('sort_offset', '>=', '0');
+    }
+
+    public function getOverdueTasksAttribute() {
+        return $this->tasks->where('sort_offset', '<', '0');
+    }
 }

@@ -1,15 +1,15 @@
 <div>
     <div class="modal-header">
-        Редактировать информацию об автомобиле
+        {{ __('Edit car information') }}
     </div>
     <div class="modal-content">
         <div class="form">
             <div class="form-item">
-                <label for="name">Название автомобиля</label>
+                <label for="name">{{ __('Car name') }}</label>
                 <input type="text" id="name" wire:model="name" placeholder="Volkswagen Transporter 4">
             </div>
             <div class="form-item">
-                <label for="mileage">Пробег</label>
+                <label for="mileage">{{ __('Mileage') }}</label>
                 <input type="number" id="mileage" wire:model="mileage" placeholder="126048">
             </div>
         </div>

@@ -63,4 +63,14 @@ class Task extends Model
         }
         return $offset;
     }
+
+    public function getSortOffsetAttribute() {
+        $offset = $this->offset;
+        if ($this->type == 'to_date' || $this->type == 'every_date') {
+            $offset *= 100;
+        } elseif ($this->type == 'none') {
+            $offset = 9999999;
+        }
+        return $offset;
+    }
 }
