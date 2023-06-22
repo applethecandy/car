@@ -41,6 +41,10 @@ class Task extends Model
         return $this->offset < 0;
     }
 
+    public function isClose() {
+        return $this->sort_offset < 5000 && $this->sort_offset >= 0;
+    }
+
     public function isToday() {
         return $this->offset == 0;
     }

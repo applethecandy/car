@@ -44,6 +44,9 @@
                             @if ($task->isOverdue())
                                 <span class="mark red">⬤</span>
                             @endif
+                            @if ($task->isClose())
+                                <span class="mark yellow">⬤</span>
+                            @endif
                             {{ $task->name }}
                         </h2>
                         @empty(!$task->description)

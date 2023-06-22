@@ -15,15 +15,23 @@
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <style>
+        .mark {
+            filter: drop-shadow(0px 0px 3px rgb(0 0 0 / 25%));
+            margin-right: .25rem;
+        }
+
         .mark.red {
             color: red;
         }
+
         .mark.green {
             color: green;
         }
+
         .mark.yellow {
             color: yellow;
         }
+
         .mark.blue {
             color: blue;
         }
